@@ -1,0 +1,4 @@
+net.lecousin.ant.core.mapping.impl.NumberHandler
+net.lecousin.ant.core.mapping.impl.OptionalHandler
+net.lecousin.ant.core.mapping.impl.TemporalConverter
+net.lecousin.ant.core.mapping.impl.UUIDConverter

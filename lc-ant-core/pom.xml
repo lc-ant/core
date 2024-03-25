@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.lecousin.ant</groupId>
+		<artifactId>lc-ant-parent-pom</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>lc-ant-core</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<jackson.version>2.17.0</jackson.version>
+		<apache-commons-lang3.version>3.14.0</apache-commons-lang3.version>
+		<apache-commons-codec.version>1.16.1</apache-commons-codec.version>
+		<lc-commons.version>0.0.1-SNAPSHOT</lc-commons.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${apache-commons-lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${apache-commons-codec.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.lecousin.commons</groupId>
+			<artifactId>lc-commons-io-reactor</artifactId>
+			<version>${lc-commons.version}</version>
+		</dependency>
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/lc-ant/parent</url>
+			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/lc-ant/core</url>
+			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+	</distributionManagement>
+</project>

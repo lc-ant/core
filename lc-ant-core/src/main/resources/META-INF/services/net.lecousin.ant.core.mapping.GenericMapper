@@ -1,0 +1,3 @@
+net.lecousin.ant.core.mapping.impl.CollectionHandler
+net.lecousin.ant.core.mapping.impl.EnumStringMapper
+net.lecousin.ant.core.mapping.impl.MapHandler

@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.lecousin.ant</groupId>
+		<artifactId>lc-ant-spring-boot-parent-pom</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>lc-ant-core-spring-boot-parent-pom</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<lc-ant-core.version>0.0.1-SNAPSHOT</lc-ant-core.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>net.lecousin.ant</groupId>
+			<artifactId>lc-ant-core</artifactId>
+			<version>${lc-ant-core.version}</version>
+		</dependency>
+	</dependencies>
+	<modules>
+		<module>lc-ant-core-spring-boot</module>
+		<module>lc-ant-core-spring-boot-connector</module>
+		<module>lc-ant-core-spring-boot-test</module>
+		<module>lc-ant-core-spring-boot-service-client</module>
+		<module>lc-ant-core-spring-boot-service-provider</module>
+		<module>lc-ant-core-spring-boot-messaging</module>
+	</modules>
+	
+	<repositories>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/lc-ant/parent</url>
+			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/lc-ant/core</url>
+			<snapshots><enabled>true</enabled></snapshots>
+		</repository>
+	</distributionManagement>
+</project>

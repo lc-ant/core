@@ -1,0 +1,5 @@
+invalid property {}=propriété {{1}} invalide
+missing required property=propriété requise manquante
+must have at least {} characters=doit comporter au moins {{1}} caractère{{if:{{1}}>1;s;}}
+must have maximum {} characters=doit comporter au maximum {{1}} caractère{{if:{{1}}>1;s;}}
+must be {} compared to {}=doit être {{1}} {{2}}

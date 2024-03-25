@@ -1,0 +1,5 @@
+invalid property {}=invalid property {{1}}
+missing required property=missing required property
+must have at least {} characters=must have at least {{1}} character{{if:{{1}}>1;s;}}
+must have maximum {} characters=must have maximum {{1}} character{{if:{{1}}>1;s;}}
+must be {} compared to {}=must be {{1}} {{2}}

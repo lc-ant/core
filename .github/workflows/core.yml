@@ -1,0 +1,37 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  get-lc-commons:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 21
+        cache: maven
+    - name: Deploy lc-commons in Github Packages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git clone -b develop https://github.com/lecousin/lc-commons
+        cd lc-commons
+        sed -i 's/https:\/\/maven.pkg.github.com\/lecousin\/lc-commons/https:\/\/maven.pkg.github.com\/lc-ant\/core/g' pom.xml
+        mvn -B deploy --file pom.xml -DskipTests -DskipJavadoc -DskipCheckstyle
+  build:
+    uses: lc-ant/parent/.github/workflows/template.maven-build.yml@develop
+    needs: get-lc-commons
+  deploy-snapshot-jars:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop' }}
+    needs: build
+    uses: lc-ant/parent/.github/workflows/template.maven-deploy-snapshot-jars.yml@develop
+    permissions:
+      contents: read
+      packages: write

@@ -1,0 +1,15 @@
+package net.lecousin.ant.core.api.traceability;
+
+public enum TraceType {
+
+	REST_SERVER,
+	REST_CLIENT,
+	METHOD_CALL,
+	DATABASE_CALL,
+	WEBSOCKET_SERVER_SESSION,
+	WEBSOCKET_SERVER_MESSAGE,
+	WEBSOCKET_CLIENT_SESSION,
+	WEBSOCKET_CLIENT_MESSAGE,
+	TASK,
+	
+}
